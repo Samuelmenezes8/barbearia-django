@@ -106,13 +106,13 @@ Siga os passos abaixo para executar o projeto em sua máquina.
 ## 📸 Screenshots
 
 **Página Inicial**
-![Página Inicial com a lista de serviços](screenshots/pagina%20de%20agendamento.pngscreenshots/)
+![Página Inicial com a lista de serviços](screenshots/pagina%20de%20agendamento.png/)
 
 **Formulário de Agendamento**
-![Formulário de agendamento com o seletor de data](screenshots/pagina%20dos%20agendamentos.png)
+![Formulário de agendamento com o seletor de data](screenshots/pagina%20inicial.png)
 
 **Formulário do Adm**
-![Pagina de administração do barbeiro](screenshots/pagina%20do%20adm.png)
+![Pagina de administração do barbeiro](screenshots/pagina%20dos%20agendamentos.png)
 
 **Pagina Final do Agendamento**
 ![Pagina final do agendamento](screenshots/pagina%20final%20do%20agendamento.png)
