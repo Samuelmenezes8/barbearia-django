@@ -73,7 +73,6 @@ Siga os passos abaixo para executar o projeto em sua máquina.
     ```
 
 3.  **Instale as dependências:**
-    *(Primeiro, precisamos criar o arquivo requirements.txt)*
     ```bash
     pip install -r requirements.txt
     ```
