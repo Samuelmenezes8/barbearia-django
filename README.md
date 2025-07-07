@@ -103,9 +103,22 @@ Siga os passos abaixo para executar o projeto em sua máquina.
 
 ---
 
-## 📸 Screenshots (Opcional, mas recomendado!)
+## 📸 Screenshots
 
-*(Aqui é um ótimo lugar para adicionar imagens de como sua aplicação ficou. Tire prints da página inicial, do formulário de agendamento e do painel de admin e adicione-os aqui. Isso enriquece muito o portfólio!)*
+**Página Inicial**
+![Página Inicial com a lista de serviços](screenshots/pagina%20de%20agendamento.pngscreenshots/)
+
+**Formulário de Agendamento**
+![Formulário de agendamento com o seletor de data](screenshots/pagina%20dos%20agendamentos.png)
+
+**Formulário do Adm**
+![Pagina de administração do barbeiro](screenshots/pagina%20do%20adm.png)
+
+**Pagina Final do Agendamento**
+![Pagina final do agendamento](screenshots/pagina%20final%20do%20agendamento.png)
+
+
+---
 
 ---
 ### Passo 2: Criar o Arquivo `requirements.txt`
