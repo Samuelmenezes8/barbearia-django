@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Agendar {{ servico.nome }}{% endblock %}
+
+{% block content %}
+    <a href="{% url 'home' %}">&larr; Voltar para a lista de serviços</a>
+    <hr>
+
+    <h1>Agendar: {{ servico.nome }}</h1>
+    <p><strong>Preço:</strong> R$ {{ servico.preco }}</p>
+    <p><strong>Duração aproximada:</strong> {{ servico.duracao }} minutos</p>
+    
+    <hr>
+    <h2>Escolha os detalhes do seu agendamento:</h2>
+    
+    <form method="POST" action="">
+        {% csrf_token %}
+
+        {% if form.errors %}
+            <div style="background-color: #f8d7da; color: #721c24; padding: 15px; border-radius: 5px; margin-bottom: 20px;">
+                <strong>Ops! Encontramos alguns erros:</strong>
+                <ul>
+                    {% for field in form %}
+                        {% for error in field.errors %}
+                            <li><strong>{{ field.label }}:</strong> {{ error }}</li>
+                        {% endfor %}
+                    {% endfor %}
+                    {% for error in form.non_field_errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        
+        {{ form.as_p }}
+
+        <button type="submit" class="botao-agendar">Confirmar Agendamento</button>
+    </form>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/pt.js"></script>
+    <script>
+        flatpickr("#datetimepicker", {
+            enableTime: true,
+            dateFormat: "d/m/Y H:i",
+            time_24hr: true,
+            locale: "pt",
+        });
+    </script>
+{% endblock %}

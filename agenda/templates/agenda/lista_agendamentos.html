@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Próximos Agendamentos{% endblock %}
+
+{% block content %}
+    <h1>Próximos Agendamentos</h1>
+    <hr>
+    {% for agendamento in agendamentos %}
+        <div class="servico-item">
+            <h2>{{ agendamento.nome_cliente }}</h2>
+            <p><strong>Serviço:</strong> {{ agendamento.servico.nome }}</p>
+            <p><strong>Barbeiro:</strong> {{ agendamento.barbeiro.nome }}</p>
+            <p><strong>Horário:</strong> {{ agendamento.data_e_hora|date:"d/m/Y \à\s H:i" }}</p>
+        </div>
+    {% empty %}
+        <p>Nenhum agendamento futuro encontrado.</p>
+    {% endfor %}
+
+    <a href="{% url 'home' %}" style="display: block; text-align: center; margin-top: 30px;">Voltar para a página inicial</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Nossos Serviços - Barbearia do Dev{% endblock %}
+
+{% block content %}
+    <h1>Barbearia do Dev</h1>
+    <p class="subtitle">Confira os serviços que oferecemos e agende seu horário!</p>
+    <hr>
+
+    {% for servico in servicos %}
+        <a href="{% url 'detalhe_servico' servico.id %}" class="servico-link">
+            <div class="servico-item">
+                <h2>{{ servico.nome }}</h2>
+                <p><strong>Preço:</strong> R$ {{ servico.preco }}</p>
+                <p><strong>Duração aproximada:</strong> {{ servico.duracao }} minutos</p>
+            </div>
+        </a>
+    {% endfor %}
+{% endblock %}
