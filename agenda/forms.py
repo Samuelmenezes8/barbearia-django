@@ -22,5 +22,7 @@ class AgendamentoForm(forms.Form):
                 'id': 'datetimepicker',
                 'placeholder': 'Selecione a data e hora'
             }
-        )
+        ),
+        # ESTA LINHA É A SOLUÇÃO! Ela ensina o Django a ler o formato do calendário.
+        input_formats=['%d/%m/%Y %H:%M']
     )
