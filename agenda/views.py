@@ -81,3 +81,21 @@ def lista_agendamentos(request):
         'agendamentos': agendamentos,
     }
     return render(request, 'agenda/lista_agendamentos.html', contexto)
+
+def cancelar_agendamento(request, agendamento_id):
+    # Por segurança, esta ação só deve ser possível via POST
+    if request.method == 'POST':
+        # Busca o agendamento que queremos deletar. Se não existir, retorna um erro 404.
+        agendamento = get_object_or_404(Agendamento, pk=agendamento_id)
+        
+        # Deleta o objeto do banco de dados
+        agendamento.delete()
+        
+        # Cria uma mensagem de feedback para o usuário
+        messages.success(request, "O agendamento foi cancelado com sucesso!")
+        
+        # Redireciona o usuário de volta para a lista de agendamentos
+        return redirect('lista_agendamentos')
+    else:
+        # Se alguém tentar acessar essa URL de outra forma, apenas redireciona
+        return redirect('home')

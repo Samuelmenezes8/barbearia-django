@@ -11,6 +11,12 @@
             <p><strong>Serviço:</strong> {{ agendamento.servico.nome }}</p>
             <p><strong>Barbeiro:</strong> {{ agendamento.barbeiro.nome }}</p>
             <p><strong>Horário:</strong> {{ agendamento.data_e_hora|date:"d/m/Y \à\s H:i" }}</p>
+
+            <form action="{% url 'cancelar_agendamento' agendamento.id %}" method="POST" style="display: inline; margin-top: 10px;">
+            {% csrf_token %}
+            <button type="submit" class="botao-cancelar" onclick="return confirm('Tem certeza que deseja cancelar este agendamento?');">Cancelar</button>
+        </form>
+        
         </div>
     {% empty %}
         <p>Nenhum agendamento futuro encontrado.</p>

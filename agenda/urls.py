@@ -8,5 +8,7 @@ urlpatterns = [
     # Nova rota para a página de sucesso do agendamento
     path('agendamento/<int:agendamento_id>/sucesso/', views.agendamento_sucesso, name='agendamento_sucesso'),
     path('agendamentos/', views.lista_agendamentos, name='lista_agendamentos'),
+    # Rota para cancelar agendamento
+    path('agendamento/<int:agendamento_id>/cancelar/', views.cancelar_agendamento, name='cancelar_agendamento'),
 ]
 
